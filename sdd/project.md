@@ -38,6 +38,12 @@ Build a CLI-first tool that prepares software projects — both greenfield and e
 
 ## Confirmed decisions
 
+Resolved by [`sdd/changes/2026-04-23-define-target-stack-model/proposal.md`](./changes/2026-04-23-define-target-stack-model/proposal.md):
+
+- **Target stack model:** SpecForge's implementation stack (Node.js + TypeScript) and the target stack (the user's project) are formally separated. SpecForge must never assume its own stack as the target stack. See [`docs/conventions/target-stack.md`](../docs/conventions/target-stack.md) for the binding rule, named stack IDs, and preset model.
+- **Stack identification strategy:** Explicit `--stack <id>` flag (preferred) with heuristic sentinel-file detection as fallback for `adapt`. Default is the `generic` preset.
+- **MVP preset scope:** `generic` and `node-typescript` presets ship first. Additional stacks (`go`, `python`, `java`) are added by dedicated follow-up changes.
+
 Resolved by [`sdd/changes/2026-04-22-define-node-typescript-cli-foundation/proposal.md`](./changes/2026-04-22-define-node-typescript-cli-foundation/proposal.md):
 
 - **Runtime:** Node.js 20.10+ — current LTS, stable ESM, native `fetch`.
@@ -59,5 +65,5 @@ The following are intentionally unresolved and should be decided through change 
 - Distribution channels (npm only, or also Homebrew / standalone binary?).
 - Configuration format for SpecForge itself (TOML / YAML / JSON / JS).
 - Whether `init` ships as a wizard, a non-interactive command, or both.
-- Strategy for detecting existing project type during `adapt` (heuristics vs. explicit flags).
+- Strategy for detecting existing project type during `adapt` — partially specified by [`sdd/changes/2026-04-23-define-target-stack-model/proposal.md`](./changes/2026-04-23-define-target-stack-model/proposal.md) §5.2 (sentinel-file heuristics defined; implementation pending).
 - Coverage thresholds for tests.

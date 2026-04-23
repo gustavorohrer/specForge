@@ -32,6 +32,16 @@ Every change proposal must declare its type in the header:
 
 Classification determines which requirements apply. A `tooling/foundation` change triggers the full checklist in `docs/conventions/tooling-changes.md`.
 
+## Target stack check for output-generating changes
+
+Any `feature` or `sdd-system` change that generates output into user projects — templates, scaffolded files, SDD artifacts, or conventions written into a target repository — must, before the plan is approved:
+
+- Declare which target stack(s) the change affects (e.g. `generic`, `node-typescript`, `go`).
+- Confirm the generated output contains no Node.js, TypeScript, or pnpm assumptions unless the target stack is explicitly `node-typescript`.
+- Be consistent with the binding rule and preset model in [`docs/conventions/target-stack.md`](../conventions/target-stack.md).
+
+Changes that skip this check must be sent back to the proposal stage.
+
 ## Agent-safety checklist for executable changes
 
 If the change involves installing tooling, creating config files, or defining a technical foundation, the proposal must explicitly include:
