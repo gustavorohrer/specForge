@@ -17,6 +17,17 @@ Use this to execute one atomic task from a plan.
 
 A single, reviewable commit (or a tight sequence of commits) implementing one task.
 
+## Probe-first validation (tooling tasks)
+
+If a task depends on a tooling assumption that has not been empirically verified, run a **validation probe** before the task's main body executes:
+
+- Confirm the tool version: `tool --version` and compare against the spec's pinned version.
+- Confirm a specific behavior: build a trivial input and inspect the output before relying on it.
+
+If a probe fails, stop. Do not adapt around the failure at the implementation layer. Revise the spec first.
+
+See `docs/conventions/tooling-changes.md` for examples and the full requirement.
+
 ## Documentation sync check
 
 Before marking a task or change complete, verify whether the implementation affected any of:

@@ -1,7 +1,7 @@
 # Tasks — install CLI foundation
 
 **Change:** `2026-04-22-install-cli-foundation`
-**Status:** Not started
+**Status:** Complete
 
 ---
 

@@ -35,6 +35,16 @@ A change that affects any of the following must update the corresponding source-
 
 Stale docs are bugs.
 
+## Spec-reality mismatch
+
+If execution reveals a mismatch between what the spec prescribes and how a tool actually behaves, treat it as a **source-of-truth issue**, not an implementation bug.
+
+- Stop execution.
+- Do not adapt around the mismatch at the implementation layer.
+- Revise the spec first, get it approved, then resume.
+
+This prevents silent divergence between the spec and reality, and prevents agents from accumulating undocumented workarounds.
+
 ## Meta
 
 - A doc should not explain the tool used to produce it (no "generated with X" banners).
