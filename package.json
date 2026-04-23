@@ -1,0 +1,29 @@
+{
+  "name": "specforge",
+  "version": "0.0.0",
+  "description": "SpecForge is a CLI-first tool that bootstraps and adapts software projects for Spec-Driven Development (SDD), enabling efficient AI-assisted development with minimal setup.",
+  "type": "module",
+  "bin": {
+    "specforge": "./dist/cli.js"
+  },
+  "scripts": {
+    "dev": "tsx src/cli.ts",
+    "build": "tsup",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint": "biome check .",
+    "format": "biome format --write .",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "commander": "14.0.3"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.4.12",
+    "@types/node": "25.6.0",
+    "tsup": "8.5.1",
+    "tsx": "4.21.0",
+    "typescript": "6.0.3",
+    "vitest": "4.1.5"
+  }
+}

@@ -40,7 +40,7 @@ All four config files (`tsconfig.json`, `biome.json`, `tsup.config.ts`, `vitest.
 
 Per-file direction (exact contents deferred to `tasks.md`):
 
-- `tsconfig.json` — `strict: true`, `noUncheckedIndexedAccess: true`, ESM module resolution, `target` aligned with the Node 20.10 baseline. No path aliases, no `references`, no `composite`, no `incremental`.
+- `tsconfig.json` — `strict: true`, `noUncheckedIndexedAccess: true`, `types: ["node"]` (required for Node.js globals), ESM module resolution, `target` aligned with the Node 20.10 baseline. No path aliases, no `references`, no `composite`, no `incremental`.
 - `biome.json` — Biome defaults; enable linting and formatting over `src/` and `test/` and nothing else.
 - `tsup.config.ts` — single entry (`src/cli.ts`), ESM output, Node platform, shebang injection enabled, `clean: true`. No DTS, no multi-format output, no code splitting, no multiple entrypoints, no library mode, no external-package tricks.
 - `vitest.config.ts` — defaults; include pattern `test/**/*.test.ts`. No coverage configuration, no setup files, no global mode.
@@ -55,8 +55,8 @@ Must contain **exactly** the following top-level keys (no more, no less):
 4. `type` — `"module"` (mandatory).
 5. `bin` — `{ "specforge": "./dist/cli.js" }` (mandatory).
 6. `scripts` — the seven canonical scripts defined in [`docs/conventions/cli-entrypoint.md`](../../../docs/conventions/cli-entrypoint.md), and **only** those seven.
-7. `dependencies` — only `commander`.
-8. `devDependencies` — only `@biomejs/biome`, `tsup`, `tsx`, `typescript`, `vitest`.
+7. `dependencies` — only `commander` (`14.0.3`).
+8. `devDependencies` — only `@biomejs/biome` (`2.4.12`), `@types/node` (`25.6.0`), `tsup` (`8.5.1`), `tsx` (`4.21.0`), `typescript` (`6.0.3`), `vitest` (`4.1.5`).
 
 Must **not** contain:
 
@@ -71,7 +71,6 @@ Must **not** contain:
 
 Exactly one file. It must:
 
-- Start with the `#!/usr/bin/env node` shebang line (source-level; `tsup` also injects at build time).
 - Import `Command` from `commander`. Import nothing else.
 - Instantiate a single `Command` configured with `name('specforge')`, the `description` from `package.json`, and a `version` literal matching `package.json`.
 - Call `.parse(process.argv)` and return.
@@ -80,6 +79,7 @@ Exactly one file. It must:
 - Import **no** modules from `./commands/*`, `./lib/*`, or any path that does not yet exist.
 - Perform **no** side effects beyond commander wiring and whatever commander does by default on `.parse()`.
 - Be linear top-to-bottom — no classes, no factories, no wrapping functions, no dynamic imports.
+- **Must not contain a shebang line**. The built artifact shebang is provided by `tsup.config.ts`.
 
 Target length: under 20 source lines.
 
@@ -138,4 +138,3 @@ Add **nothing else**.
 - Coverage thresholds and coverage config beyond Vitest defaults.
 - Pinning the pnpm version via `packageManager`.
 
-_No `tasks.md` yet. Tasks are drafted when this proposal is approved, per [`docs/workflows/start-plan.md`](../../../docs/workflows/start-plan.md)._

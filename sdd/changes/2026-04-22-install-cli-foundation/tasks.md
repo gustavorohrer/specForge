@@ -74,14 +74,15 @@ SpecForge is a CLI-first tool that bootstraps and adapts software projects for S
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "commander": "latest"
+    "commander": "14.0.3"
   },
   "devDependencies": {
-    "@biomejs/biome": "latest",
-    "tsup": "latest",
-    "tsx": "latest",
-    "typescript": "latest",
-    "vitest": "latest"
+    "@biomejs/biome": "2.4.12",
+    "@types/node": "25.6.0",
+    "tsup": "8.5.1",
+    "tsx": "4.21.0",
+    "typescript": "6.0.3",
+    "vitest": "4.1.5"
   }
 }
 ```
@@ -118,11 +119,27 @@ SpecForge is a CLI-first tool that bootstraps and adapts software projects for S
 **T2.9** Validate that `dependencies` has exactly one key: `"commander"`.
 → **STOP** if any other key is present or if `"commander"` is absent.
 
-**T2.10** Validate that `devDependencies` has exactly 5 keys: `"@biomejs/biome"`, `"tsup"`, `"tsx"`, `"typescript"`, `"vitest"`.
+**T2.10** Validate that `devDependencies` has exactly 6 keys: `"@biomejs/biome"`, `"@types/node"`, `"tsup"`, `"tsx"`, `"typescript"`, `"vitest"`.
 → **STOP** if any key is missing or any additional key is present.
 
 **T2.11** Validate that `package.json` does not contain any of the following keys at any level: `engines`, `packageManager`, `keywords`, `author`, `license`, `homepage`, `repository`, `bugs`, `contributors`, `funding`.
 → **STOP** if any forbidden key is found.
+
+**T2.12** Validate that `dependencies.commander` is exactly `"14.0.3"`.
+→ **STOP** if the version differs.
+
+**T2.13** Validate that each `devDependencies` entry has exactly the following version:
+
+| Package | Expected version |
+|---|---|
+| `@biomejs/biome` | `2.4.12` |
+| `@types/node` | `25.6.0` |
+| `tsup` | `8.5.1` |
+| `tsx` | `4.21.0` |
+| `typescript` | `6.0.3` |
+| `vitest` | `4.1.5` |
+
+→ **STOP** if any version differs.
 
 ---
 
@@ -140,6 +157,7 @@ SpecForge is a CLI-first tool that bootstraps and adapts software projects for S
     "moduleResolution": "NodeNext",
     "strict": true,
     "noUncheckedIndexedAccess": true,
+    "types": ["node"],
     "esModuleInterop": true,
     "skipLibCheck": true,
     "outDir": "dist",
@@ -155,19 +173,26 @@ SpecForge is a CLI-first tool that bootstraps and adapts software projects for S
 **T3.3** Validate that `tsconfig.json` contains `"noUncheckedIndexedAccess": true`.
 → **STOP** if absent or set to `false`.
 
-**T3.4** Validate that `tsconfig.json` does not contain any of the following keys: `paths`, `references`, `composite`, `incremental`.
+**T3.4** Validate that `tsconfig.json` `compilerOptions.types` is exactly `["node"]`.
+→ **STOP** if absent or set to any other value.
+
+**T3.5** Validate that `tsconfig.json` does not contain any of the following keys: `paths`, `references`, `composite`, `incremental`.
 → **STOP** if any forbidden key is present.
 
 ---
 
 ### 3b — biome.json
 
-**T3.5** Write `biome.json` at the repository root with exactly this content:
+**T3.6** Write `biome.json` at the repository root with exactly this content:
 
 ```json
 {
-  "organizeImports": {
-    "enabled": true
+  "assist": {
+    "actions": {
+      "source": {
+        "organizeImports": "on"
+      }
+    }
   },
   "linter": {
     "enabled": true,
@@ -179,22 +204,22 @@ SpecForge is a CLI-first tool that bootstraps and adapts software projects for S
     "enabled": true
   },
   "files": {
-    "include": ["src/**", "test/**"]
+    "includes": ["src/**", "test/**"]
   }
 }
 ```
 
-**T3.6** Validate that `biome.json` `files.include` is exactly `["src/**", "test/**"]` with no other entries.
+**T3.7** Validate that `biome.json` `files.include` is exactly `["src/**", "test/**"]` with no other entries.
 → **STOP** if any other path is present or if either entry is missing.
 
-**T3.7** Validate that `biome.json` does not reference any path outside `src/` and `test/`.
+**T3.8** Validate that `biome.json` does not reference any path outside `src/` and `test/`.
 → **STOP** if any such reference exists.
 
 ---
 
 ### 3c — tsup.config.ts
 
-**T3.8** Write `tsup.config.ts` at the repository root with exactly this content:
+**T3.9** Write `tsup.config.ts` at the repository root with exactly this content:
 
 ```typescript
 import { defineConfig } from 'tsup'
@@ -210,20 +235,20 @@ export default defineConfig({
 })
 ```
 
-**T3.9** Validate that `tsup.config.ts` `entry` is exactly `['src/cli.ts']` with no other entries.
+**T3.10** Validate that `tsup.config.ts` `entry` is exactly `['src/cli.ts']` with no other entries.
 → **STOP** if any other entry is present or if `src/cli.ts` is absent.
 
-**T3.10** Validate that `tsup.config.ts` `format` is exactly `['esm']`.
+**T3.11** Validate that `tsup.config.ts` `format` is exactly `['esm']`.
 → **STOP** if `cjs` or any other format is included.
 
-**T3.11** Validate that `tsup.config.ts` does not contain any of the following options: `dts`, `splitting`, `external`, `noExternal`, `treeshake`, `minify`.
+**T3.12** Validate that `tsup.config.ts` does not contain any of the following options: `dts`, `splitting`, `external`, `noExternal`, `treeshake`, `minify`.
 → **STOP** if any forbidden option is present.
 
 ---
 
 ### 3d — vitest.config.ts
 
-**T3.12** Write `vitest.config.ts` at the repository root with exactly this content:
+**T3.13** Write `vitest.config.ts` at the repository root with exactly this content:
 
 ```typescript
 import { defineConfig } from 'vitest/config'
@@ -235,10 +260,10 @@ export default defineConfig({
 })
 ```
 
-**T3.13** Validate that `vitest.config.ts` `test.include` is exactly `['test/**/*.test.ts']`.
+**T3.14** Validate that `vitest.config.ts` `test.include` is exactly `['test/**/*.test.ts']`.
 → **STOP** if the pattern is different or if any additional include pattern is present.
 
-**T3.14** Validate that `vitest.config.ts` does not contain any of the following keys under `test`: `coverage`, `setupFiles`, `globals`, `environment`, `reporters`.
+**T3.15** Validate that `vitest.config.ts` does not contain any of the following keys under `test`: `coverage`, `setupFiles`, `globals`, `environment`, `reporters`.
 → **STOP** if any forbidden key is present.
 
 ---
@@ -248,8 +273,6 @@ export default defineConfig({
 **T4.1** Write `src/cli.ts` with exactly this content:
 
 ```typescript
-#!/usr/bin/env node
-
 import { Command } from 'commander'
 
 const program = new Command()
@@ -262,9 +285,8 @@ program
 program.parse(process.argv)
 ```
 
-**T4.2** Validate that line 1 of `src/cli.ts` is exactly `#!/usr/bin/env node`.
-→ **STOP** if the shebang is absent, on a different line, or has a different value.
-
+**T4.2** Validate that `src/cli.ts` does not contain any shebang line.
+→ **STOP** if any line in the file starts with `#!`.
 **T4.3** Validate that `src/cli.ts` contains exactly one import statement and that it imports only `Command` from `'commander'`.
 → **STOP** if any other import is present.
 
@@ -352,6 +374,9 @@ coverage/
 → **STOP** if absent.
 
 **T6.13** Validate that `node_modules/vitest` exists.
+→ **STOP** if absent.
+
+**T6.14** Validate that `node_modules/@types/node` exists.
 → **STOP** if absent.
 
 ---
