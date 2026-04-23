@@ -17,6 +17,19 @@ Use this to execute one atomic task from a plan.
 
 A single, reviewable commit (or a tight sequence of commits) implementing one task.
 
+## Documentation sync check
+
+Before marking a task or change complete, verify whether the implementation affected any of:
+
+- Confirmed decisions (`sdd/project.md`).
+- Project structure (directories, entrypoints, layout).
+- Workflows (`docs/workflows/`).
+- Conventions (`docs/conventions/`).
+- Feature-layer docs (`docs/features/`).
+- User-facing behavior (CLI output, flags, exit codes).
+
+If yes, update the corresponding source-of-truth document **in the same change**. See `docs/conventions/documentation.md`.
+
 ## Next
 
 - More tasks pending → back to `docs/workflows/start-task.md`.

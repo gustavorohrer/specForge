@@ -36,16 +36,28 @@ Build a CLI-first tool that prepares software projects — both greenfield and e
 - Target stack selected: Node.js + TypeScript with pnpm.
 - Primary agent in use: Claude Code.
 
+## Confirmed decisions
+
+Resolved by [`sdd/changes/2026-04-22-define-node-typescript-cli-foundation/proposal.md`](./changes/2026-04-22-define-node-typescript-cli-foundation/proposal.md):
+
+- **Runtime:** Node.js 20.10+ — current LTS, stable ESM, native `fetch`.
+- **Language:** TypeScript 5.5+, `strict: true`, ESM only.
+- **Package manager:** pnpm — deterministic installs, strict resolution, workspace-ready.
+- **CLI framework:** `commander` — ubiquity, polished help output, strong agent training base.
+- **Linter / formatter:** Biome — single tool, single config, fast.
+- **Test runner:** Vitest — native ESM/TS, Jest-compatible API, first-class mocking.
+- **Build:** `tsup` — fast esbuild bundle with shebang injection for the CLI entrypoint.
+
+These are locked until explicitly modified by a new SDD change.
+
 ## Open decisions
 
 The following are intentionally unresolved and should be decided through change proposals:
 
-- CLI framework choice (e.g. `commander`, `cac`, `clipanion`, or native `node:util`).
 - Template strategy (static copy vs. programmatic generation).
 - Versioning and release strategy (SemVer + changesets? release-please? manual?).
 - Distribution channels (npm only, or also Homebrew / standalone binary?).
 - Configuration format for SpecForge itself (TOML / YAML / JSON / JS).
 - Whether `init` ships as a wizard, a non-interactive command, or both.
 - Strategy for detecting existing project type during `adapt` (heuristics vs. explicit flags).
-- Minimum supported Node.js version.
-- Test framework and coverage expectations.
+- Coverage thresholds for tests.

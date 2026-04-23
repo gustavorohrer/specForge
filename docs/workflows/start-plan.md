@@ -19,6 +19,19 @@ Use this once a change proposal has been approved and it's time to decide **how*
 - An approved plan inside the change file.
 - If applicable, a new feature directory under `docs/features/`.
 
+## Agent-safety checklist for executable changes
+
+If the change involves installing tooling, creating config files, or defining a technical foundation, the proposal must explicitly include:
+
+- **Exact artifacts** to create or modify — enumerated, no ambiguity.
+- **Decision lock** — a statement that the change executes (not re-opens) prior decisions.
+- **Configuration constraints** — per-file rules when config files are created (minimal, no advanced settings, no environment-specific values).
+- **Execution constraints** — prohibitions on side work, extra deps, refactors, or abstractions.
+- **Explicit out-of-scope items** — including deferred decisions that a reader might otherwise assume are in scope.
+- **Explicit prohibitions for the agent** — "do not" bullets for the most likely wrong turns.
+
+Changes that skip these sections must be sent back to the proposal stage.
+
 ## Next
 
 Once approved → `docs/workflows/start-task.md`.

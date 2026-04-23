@@ -11,3 +11,7 @@ Stable, low-level rules that apply everywhere in the repo.
 - **Drafts:** prefix the filename with `DRAFT-` while in progress; remove the prefix when ready.
 - **Do not commit:** half-implementations, commented-out code, speculative abstractions, or dead scaffolding "for later".
 - **One idea per paragraph.** Use lists and tables when content is structural.
+
+## Tooling
+
+- CLI entrypoint and canonical script names are defined in [`docs/conventions/cli-entrypoint.md`](./cli-entrypoint.md). Do not introduce new scripts without a change proposal.
