@@ -67,7 +67,7 @@ Conceptual layout:
 ```
 presets/
   generic/          # stack-agnostic default
-  node-typescript/  # reference implementation
+  node-typescript/  # dogfooding preset (SpecForge is itself a Node.js+TypeScript project)
   go/
   python/
   java/

@@ -140,7 +140,7 @@ Presets are stack-specific and isolated from each other. A preset for `go` must 
 ```
 presets/
   generic/          # stack-agnostic default
-  node-typescript/  # reference implementation (mirrors SpecForge's own stack)
+  node-typescript/  # dogfooding preset (SpecForge is itself a Node.js+TypeScript project)
   go/
   python/
   java/
@@ -159,7 +159,7 @@ To avoid premature generalization, the MVP scopes implementation strictly:
 ### What ships in MVP
 
 - `generic` preset — stack-agnostic SDD scaffold; the safe default.
-- `node-typescript` preset — as a reference implementation and the stack SpecForge itself uses; useful for dogfooding.
+- `node-typescript` preset — included because SpecForge is itself a Node.js+TypeScript project; running the preset system against a known stack has practical value (dogfooding). It carries no architectural privilege over other stacks.
 - `--stack` flag on `specforge init` — explicit declaration, no detection required.
 
 ### What is deferred
