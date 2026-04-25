@@ -32,6 +32,12 @@ Every change proposal must declare its type in the header:
 
 Classification determines which requirements apply. A `tooling/foundation` change triggers the full checklist in `docs/conventions/tooling-changes.md`.
 
+## Spec gate for feature changes
+
+Before planning any `feature` change, verify the proposal references a ready spec in `sdd/specs/` and that readiness is satisfied per `docs/conventions/spec-change-gating.md`.
+
+If the proposal has no linked ready spec, planning is invalid. Send the change back to proposal stage.
+
 ## Target stack check for output-generating changes
 
 Any `feature` or `sdd-system` change that generates output into user projects — templates, scaffolded files, SDD artifacts, or conventions written into a target repository — must, before the plan is approved:
