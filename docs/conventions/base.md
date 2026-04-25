@@ -16,3 +16,4 @@ Stable, low-level rules that apply everywhere in the repo.
 
 - CLI entrypoint and canonical script names are defined in [`docs/conventions/cli-entrypoint.md`](./cli-entrypoint.md). Do not introduce new scripts without a change proposal.
 - Target stack conventions (named stack IDs, the binding rule separating implementation from target stack, and the preset model) are defined in [`docs/conventions/target-stack.md`](./target-stack.md).
+- Change artifact structure and status semantics are defined in [`docs/conventions/change-artifacts.md`](./change-artifacts.md).

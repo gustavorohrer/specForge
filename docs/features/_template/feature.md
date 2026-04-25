@@ -8,7 +8,7 @@ One paragraph describing what this feature does and for whom.
 
 ## Motivation
 
-Why this feature exists. Link to the originating change file in `sdd/changes/`.
+Why this feature exists. Link to the originating change folder artifacts in `sdd/changes/<change-id>/`.
 
 ## User-facing behavior
 
@@ -37,4 +37,5 @@ What this feature intentionally does **not** do.
 ## See also
 
 - Plan: `./plan.md`
-- Originating change: `sdd/changes/<file>.md`
+- Originating proposal: `sdd/changes/<change-id>/proposal.md`
+- Originating tasks: `sdd/changes/<change-id>/tasks.md`

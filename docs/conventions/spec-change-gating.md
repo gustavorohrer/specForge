@@ -57,8 +57,8 @@ If any condition fails, the spec is not ready.
 ## 3. Updated lifecycle
 
 1. Draft or amend spec in `sdd/specs/` until it is ready per §2.2.
-2. Open `feature` change proposal in `sdd/changes/` and reference the ready spec path.
-3. Approve proposal, then create plan/tasks.
+2. Open `feature` change proposal in `sdd/changes/<change-id>/proposal.md` and reference the ready spec path.
+3. Approve proposal, then create `sdd/changes/<change-id>/tasks.md`.
 4. Implement tasks.
 5. If execution reveals a mismatch between implementation reality and spec, stop and revise the spec first (per `docs/conventions/documentation.md`).
 
@@ -77,5 +77,6 @@ Trigger rules:
 
 - [`docs/workflows/start-change.md`](../workflows/start-change.md)
 - [`docs/workflows/start-plan.md`](../workflows/start-plan.md)
+- [`docs/conventions/change-artifacts.md`](./change-artifacts.md)
 - [`docs/conventions/documentation.md`](./documentation.md)
 - [`sdd/specs/README.md`](../../sdd/specs/README.md)

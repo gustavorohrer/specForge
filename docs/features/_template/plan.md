@@ -1,6 +1,6 @@
 # Plan — <feature name>
 
-> Copy with the feature folder. Keep in sync with the `## Plan` section of the originating change file.
+> Copy with the feature folder. Keep in sync with the originating change tasks file.
 
 ## Approach
 
@@ -34,4 +34,5 @@ What to revert if this needs to be undone, and what side effects to clean up.
 ## See also
 
 - Feature overview: `./feature.md`
-- Originating change: `sdd/changes/<file>.md`
+- Originating proposal: `sdd/changes/<change-id>/proposal.md`
+- Originating tasks: `sdd/changes/<change-id>/tasks.md`

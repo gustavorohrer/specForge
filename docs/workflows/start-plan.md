@@ -4,20 +4,24 @@ Use this once a change proposal has been approved and it's time to decide **how*
 
 ## Steps
 
-1. **Open the approved change file** in `sdd/changes/`.
-2. **Append a `## Plan` section** to the same file, containing:
-   - **Approach** — short, high-level strategy.
-   - **Impacted files / areas** — list of files, modules, or docs that will change.
-   - **Tasks** — atomic, independently reviewable steps. Use checkboxes.
+1. **Open the approved change folder** in `sdd/changes/<change-id>/`.
+2. **Review `proposal.md`** and confirm:
+   - Scope and out-of-scope are explicit.
+   - Type/classification is explicit.
+   - Feature changes link a ready spec when required.
+3. **Create `tasks.md`** (or complete it if partially drafted), containing:
+   - **Status** — initial status is `Draft`.
+   - **Tasks** — atomic, independently reviewable steps with task markers.
    - **Verification** — how we will confirm the change works end-to-end.
-   - **Rollback** — how to revert if needed.
-3. **If the change introduces or reshapes a feature**, create `docs/features/<feature-name>/` from `docs/features/_template/`.
-4. **Stop at the plan level.** Do not implement yet. Request review.
+   - **Definition of done** — explicit closure checks.
+4. **If the change introduces or reshapes a feature**, create `docs/features/<feature-name>/` from `docs/features/_template/`.
+5. **Stop at the plan level.** Do not implement yet. Request review.
 
 ## Output
 
-- An approved plan inside the change file.
+- A reviewed `tasks.md` in the change folder.
 - If applicable, a new feature directory under `docs/features/`.
+- Status handling and closure semantics follow `docs/conventions/change-artifacts.md`.
 
 ## Change classification
 

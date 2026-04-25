@@ -4,14 +4,18 @@ Use this to execute one atomic task from a plan.
 
 ## Steps
 
-1. **Reread the task and plan** in the relevant change file. If the task is unclear, stop and revise the plan first.
+1. **Reread the task and plan** in `sdd/changes/<change-id>/tasks.md` and `proposal.md`. If the task is unclear, stop and revise `tasks.md` first.
 2. **Implement the minimum** required to satisfy the task.
    - Do not exceed the task's scope.
    - If scope drift becomes necessary, stop and update the plan.
 3. **Update docs** that describe changed behavior, **in the same commit**. See `docs/conventions/documentation.md`.
 4. **Verify** per the plan's verification strategy — tests, manual run, lint, type-check, etc.
-5. **Commit** following `docs/conventions/git.md`. Reference the change file in the commit body.
-6. **Mark the task complete** in the plan (`- [x]`).
+5. **Commit** following `docs/conventions/git.md`. Reference `proposal.md` and `tasks.md` in the commit body.
+6. **Mark the task complete** in `tasks.md` (`- [x]`).
+7. **Reconcile statuses** per `docs/conventions/change-artifacts.md`.
+   - Keep `proposal.md` at `In Progress` while any task is still open or blocked.
+   - Set `tasks.md` to `Complete` only when all task items are complete.
+   - Set `proposal.md` to `Closed` only after `tasks.md` is `Complete`.
 
 ## Output
 
