@@ -40,7 +40,6 @@ Before marking a task or change complete, verify whether the implementation affe
 - Project structure (directories, entrypoints, layout).
 - Workflows (`docs/workflows/`).
 - Conventions (`docs/conventions/`).
-- Feature-layer docs (`docs/features/`).
 - User-facing behavior (CLI output, flags, exit codes).
 
 If yes, update the corresponding source-of-truth document **in the same change**. See `docs/conventions/documentation.md`.

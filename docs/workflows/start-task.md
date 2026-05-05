@@ -9,8 +9,8 @@ Use this to pick up a single task from an approved plan.
    - All tasks the selected one depends on are complete.
    - You understand the verification criteria for this task.
 3. **Create a working branch** per `docs/conventions/git.md`.
-4. **Claim the task** in `tasks.md`.
-   - Mark the task item as in progress (for example `- [~] task description`).
+4. **Claim the task** in `tasks.md`. Status semantics and relationship rules are defined in `docs/conventions/change-artifacts.md`. Quick reference:
+   - Mark the task item as in progress: `[~]`.
    - Set `tasks.md` status to `In Progress` when execution starts.
    - Set `proposal.md` status to `In Progress` when any task is in progress.
    - If `tasks.md` status becomes `Blocked`, keep `proposal.md` as `In Progress`.

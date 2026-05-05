@@ -15,6 +15,9 @@ Change proposals and execution tasks. One folder per change.
   - Date prefix optional (for example `2026-04-25-<slug>`)
 - Status semantics and closure rules:
   - See `docs/conventions/change-artifacts.md`
+- Templates:
+  - `sdd/changes/_template/proposal.md` — starter for new proposals
+  - `sdd/changes/_template/tasks.md` — starter for new tasks files
 - Workflows:
   - Start a proposal: `docs/workflows/start-change.md`
   - Create task plan: `docs/workflows/start-plan.md`

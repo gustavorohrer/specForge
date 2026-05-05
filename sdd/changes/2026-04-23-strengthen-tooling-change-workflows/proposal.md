@@ -2,7 +2,7 @@
 
 - **Change ID:** `2026-04-23-strengthen-tooling-change-workflows`
 - **Status:** Closed
-- **Type:** SDD system improvement (no application code changes)
+- **Type:** `sdd-system`
 
 ---
 

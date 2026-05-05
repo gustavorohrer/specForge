@@ -1,7 +1,7 @@
 # Proposal — install the Node.js + TypeScript CLI foundation
 
 - **Change ID:** `2026-04-22-install-cli-foundation`
-- **Status:** Draft (not started)
+- **Status:** `Closed`
 - **Prerequisite:** [`sdd/changes/2026-04-22-define-node-typescript-cli-foundation/proposal.md`](../2026-04-22-define-node-typescript-cli-foundation/proposal.md)
 
 ## Problem

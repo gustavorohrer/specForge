@@ -1,16 +1,26 @@
 # Workflow — validate documentation
 
-Run this checklist before opening a pull request.
+Run this checklist before closing a change.
 
-## Checklist
+## Change artifacts
 
-- [ ] `sdd/project.md` reflects current scope and status.
-- [ ] The change folder in `sdd/changes/<change-id>/` has required artifacts (`proposal.md`, `tasks.md`).
-- [ ] `tasks.md` is `Complete`, and all task items are checked off (`[x]`) unless explicitly moved to a successor change.
-- [ ] `proposal.md` is `Closed`, and it was not closed before `tasks.md` became `Complete`.
-- [ ] Any new or modified behavior is reflected under `docs/features/`.
-- [ ] `docs/conventions/` is still accurate. Update or confirm no changes needed.
-- [ ] `docs/workflows/` is still accurate. Update or confirm no changes needed.
+- [ ] The change folder `sdd/changes/<change-id>/` has `proposal.md` and `tasks.md`.
+- [ ] `tasks.md` status is `Complete` and all task items are `[x]`, or any open items are explicitly moved to a successor change.
+- [ ] `proposal.md` status is `Closed`. It was not closed before `tasks.md` became `Complete`.
+
+## Specs (feature changes only)
+
+- [ ] A ready spec exists at `sdd/specs/<topic>.md` and is referenced in `proposal.md`.
+- [ ] If the spec was amended during implementation, the amendment is consistent with what was built.
+
+## Process docs (sdd-system changes)
+
+- [ ] Affected workflows in `docs/workflows/` are updated or confirmed unchanged.
+- [ ] Affected conventions in `docs/conventions/` are updated or confirmed unchanged.
+
+## Project-wide
+
+- [ ] `sdd/project.md` reflects current scope and confirmed decisions.
 - [ ] `README.md` status section matches reality.
 - [ ] No `DRAFT-` files remain in the change.
 - [ ] No doc points to a file that no longer exists.

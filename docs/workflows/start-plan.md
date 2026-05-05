@@ -14,13 +14,11 @@ Use this once a change proposal has been approved and it's time to decide **how*
    - **Tasks** — atomic, independently reviewable steps with task markers.
    - **Verification** — how we will confirm the change works end-to-end.
    - **Definition of done** — explicit closure checks.
-4. **If the change introduces or reshapes a feature**, create `docs/features/<feature-name>/` from `docs/features/_template/`.
-5. **Stop at the plan level.** Do not implement yet. Request review.
+4. **Stop at the plan level.** Do not implement yet. Request review.
 
 ## Output
 
 - A reviewed `tasks.md` in the change folder.
-- If applicable, a new feature directory under `docs/features/`.
 - Status handling and closure semantics follow `docs/conventions/change-artifacts.md`.
 
 ## Change classification

@@ -1,7 +1,7 @@
 # Proposal — define Node.js + TypeScript CLI foundation
 
 - **Change ID:** `2026-04-22-define-node-typescript-cli-foundation`
-- **Status:** Draft (proposed)
+- **Status:** `Closed`
 - **Author:** Gustavo Rohrer
 - **Date:** 2026-04-22
 

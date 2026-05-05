@@ -1,6 +1,7 @@
 # Tasks — define Node.js + TypeScript CLI foundation
 
 - **Change ID:** `2026-04-22-define-node-typescript-cli-foundation`
+- **Status:** `Complete`
 - **Companion doc:** [`./proposal.md`](./proposal.md)
 
 Each task is atomic, ordered, and verifiable. **No task installs dependencies, creates config files, or writes source code.** This change ends with the project fully *described*; the next change will *install* the foundation.
@@ -94,13 +95,13 @@ Each task is atomic, ordered, and verifiable. **No task installs dependencies, c
 
 ## Definition of done
 
-- [ ] T1 — `sdd/project.md` updated with confirmed decisions.
-- [ ] T2 — `docs/features/cli-foundation/feature.md` created.
-- [ ] T3 — `docs/conventions/cli-entrypoint.md` created.
-- [ ] T4 — `docs/conventions/base.md` cross-links to T3.
-- [ ] T5 — follow-up change stub claimed.
-- [ ] `docs/workflows/validate-docs.md` checklist passes.
-- [ ] No `.ts`, `package.json`, `tsconfig.json`, `biome.json`, `tsup.config.ts`, `vitest.config.ts`, or `node_modules/` exists in the working tree.
+- [x] T1 — `sdd/project.md` updated with confirmed decisions.
+- [x] T2 — `docs/features/cli-foundation/feature.md` created. (subsequently removed by `stabilize-sdd-base-workflow`)
+- [x] T3 — `docs/conventions/cli-entrypoint.md` created.
+- [x] T4 — `docs/conventions/base.md` cross-links to T3.
+- [x] T5 — follow-up change stub claimed.
+- [x] `docs/workflows/validate-docs.md` checklist passes.
+- [x] No `.ts`, `package.json`, `tsconfig.json`, `biome.json`, `tsup.config.ts`, `vitest.config.ts`, or `node_modules/` exists in the working tree.
 
 ---
 

@@ -41,4 +41,3 @@ The script names in the table above are reserved. Introducing a new script name 
 ## See also
 
 - Originating change: [`sdd/changes/2026-04-22-define-node-typescript-cli-foundation/proposal.md`](../../sdd/changes/2026-04-22-define-node-typescript-cli-foundation/proposal.md)
-- Feature doc: [`docs/features/cli-foundation/feature.md`](../features/cli-foundation/feature.md)

@@ -9,7 +9,6 @@
 | Change proposals and plans | `sdd/changes/` |
 | Stable rules (conventions) | `docs/conventions/` |
 | Step-by-step workflows | `docs/workflows/` |
-| Feature documentation | `docs/features/<feature-name>/` |
 | Operating contract for contributors | `AGENTS.md` |
 | Project overview | `README.md` |
 
