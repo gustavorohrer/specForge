@@ -11,5 +11,6 @@ A spec describes **what** the system must do, independent of **how** it's implem
 - Specs are amended through change proposals — do not rewrite a spec in place without a corresponding change.
 - For `feature` changes, the spec must be ready **before** the feature proposal is created.
 - Spec readiness and feature classification rules are defined in `docs/conventions/spec-change-gating.md`.
+- To create or mature a spec, follow `docs/workflows/write-spec.md`.
 
 No specs exist yet.

@@ -51,6 +51,7 @@ Do not skip this step.
 | Intent | Start here |
 |---|---|
 | Understand the project | `sdd/project.md` |
+| Write a spec for a feature | `docs/workflows/write-spec.md` |
 | Propose a change | `docs/workflows/start-change.md` |
 | Turn a change into a plan | `docs/workflows/start-plan.md` |
 | Pick up a task | `docs/workflows/start-task.md` |

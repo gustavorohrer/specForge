@@ -7,7 +7,7 @@ Use this when proposing **any** meaningful modification to the project: feature,
 1. **Classify the change type first.**
    - Allowed types: `feature`, `tooling/foundation`, `sdd-system`, `fix`.
    - If the type is `feature`, a ready spec must already exist in `sdd/specs/`.
-   - If no ready spec exists, stop. Create or finish the spec first.
+   - If no ready spec exists, stop. Create or finish the spec first by following `docs/workflows/write-spec.md`.
    - Readiness is defined in `docs/conventions/spec-change-gating.md`.
 
 2. **Create the change folder.**
