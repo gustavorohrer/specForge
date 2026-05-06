@@ -146,6 +146,30 @@ Once the spec is ready:
 - A feature proposal references the spec by path: `sdd/specs/<topic>.md`.
 - Do not embed a spec inside a proposal or tasks file. Keep them separate.
 
+## 9. Amending a spec during execution
+
+Use this when implementation reveals a divergence between the spec and reality, and the spec must be corrected.
+
+**When amendment is required:**
+- An acceptance criterion cannot be satisfied as written.
+- A required behavior is not covered by the spec.
+- A scope boundary is wrong and must be corrected.
+
+Do not amend a spec to match a shortcut or workaround. Amend only when the spec itself is incorrect or incomplete.
+
+**How to apply minimal changes:**
+1. Identify the exact delta — the specific statement(s) that must change.
+2. Apply the minimum change: correct the incorrect statement, add the missing case, or move the ambiguous case to Non-goals.
+3. Do not rewrite surrounding content. Change only what is necessary.
+
+**Re-validate readiness:**
+After amending, re-run all 5 readiness conditions from `docs/conventions/spec-change-gating.md §2.2`. All conditions must pass before resuming execution. If any condition fails, the amendment is incomplete — fix it first.
+
+**Record the amendment:**
+Add a note in the change's `tasks.md` under the relevant task: "Spec amended: `sdd/specs/<topic>.md` — <one-line description of the delta>." Do not document the amendment inside the spec file itself.
+
+Once re-validated, resume execution from the point where the mismatch was detected.
+
 ## Next
 
 Once the spec is ready → `docs/workflows/start-change.md` (to open the feature change proposal).

@@ -11,7 +11,7 @@ Run this checklist before closing a change.
 ## Specs (feature changes only)
 
 - [ ] A ready spec exists at `sdd/specs/<topic>.md` and is referenced in `proposal.md`.
-- [ ] If the spec was amended during implementation, the amendment is consistent with what was built.
+- [ ] If the spec was amended during implementation, all 5 readiness conditions in `docs/conventions/spec-change-gating.md §2.2` pass.
 
 ## Process docs (sdd-system changes)
 

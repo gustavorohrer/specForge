@@ -40,6 +40,19 @@ Examples:
 
 If a probe fails, execution must stop. The task is not retried — the spec is revised first.
 
+## Proposal completeness
+
+A `tooling/foundation` proposal must explicitly include:
+
+- **Exact artifacts** — every file to create or modify, enumerated with no ambiguity.
+- **Decision lock** — a statement that this change executes (not re-opens) prior decisions.
+- **Configuration constraints** — per-file rules when config files are created (minimal settings, no environment-specific values, no experimental flags).
+- **Execution constraints** — explicit prohibitions on side work, extra dependencies, refactors, or abstractions not in scope.
+- **Explicit out-of-scope items** — including deferred decisions a reader might otherwise assume are in scope.
+- **Explicit prohibitions for the agent** — "do not" bullets covering the most likely wrong turns.
+
+A proposal missing any of these items must be sent back to draft.
+
 ## See also
 
 - [`docs/workflows/start-plan.md`](../workflows/start-plan.md) — where classification and this checklist are enforced during planning

@@ -31,11 +31,27 @@ Use this when proposing **any** meaningful modification to the project: feature,
 4. **Stop at the proposal level.**
    - Do not create task execution details yet.
    - Do not implement yet.
-   - Request review (human or agent) before proceeding.
+   - Confirm the proposal is approved before proceeding to planning.
+
+## Approval
+
+A proposal is approved when the author has confirmed:
+
+- All required sections are present and non-contradictory.
+- Scope has explicit in-scope and out-of-scope statements.
+- Success criteria are verifiable.
+- For `feature` changes: a ready spec is linked at `sdd/specs/<topic>.md`.
+- For `tooling/foundation` changes: all items in `docs/conventions/tooling-changes.md` are satisfied.
+
+**Solo or agent development:** Self-review constitutes approval. No external approver is required.
+
+Record approval by setting `proposal.md` status to `In Progress` when creating `tasks.md`. A proposal that remains at `Draft` is not approved.
+
+If any required section is missing or contradictory, the proposal stays `Draft`. Do not proceed to planning.
 
 ## Output
 
-A change folder containing `proposal.md` ready for review.
+A change folder containing `proposal.md` ready for planning.
 
 ## Next
 

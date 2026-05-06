@@ -44,6 +44,15 @@ If execution reveals a mismatch between what the spec prescribes and how a tool 
 
 This prevents silent divergence between the spec and reality, and prevents agents from accumulating undocumented workarounds.
 
+## Open decisions
+
+An open decision in `sdd/project.md` is resolved by a closed change that:
+
+1. Explicitly names the decision it resolves (in the proposal or tasks).
+2. Updates `sdd/project.md` to move the item from "Open decisions" to "Confirmed decisions" and links the resolving change folder.
+
+This update is mandatory in the same change that resolves the decision. A decision is not considered resolved until `sdd/project.md` reflects it.
+
 ## Meta
 
 - A doc should not explain the tool used to produce it (no "generated with X" banners).

@@ -8,6 +8,10 @@
 - Docs-only: `docs/<short-slug>`.
 - Chore / tooling: `chore/<short-slug>`.
 
+When a branch corresponds to a single change in `sdd/changes/`, use the change ID as the slug. For example, a change at `sdd/changes/2026-05-04-add-init-command/` uses branch `feat/2026-05-04-add-init-command`.
+
+If a change is large enough to require multiple PRs, create one branch per unit of work. Each PR must reference the parent change (`sdd/changes/<change-id>/`) in its description. The change is closed only after all PRs are merged and all tasks in `tasks.md` are complete.
+
 ## Commits
 
 - One coherent change per commit.

@@ -50,29 +50,22 @@ Any `feature` or `sdd-system` change that generates output into user projects �
 
 Changes that skip this check must be sent back to the proposal stage.
 
-## Agent-safety checklist for executable changes
+## Task quality requirements
 
-If the change involves installing tooling, creating config files, or defining a technical foundation, the proposal must explicitly include:
+Every task in `tasks.md` must, regardless of change type:
 
-- **Exact artifacts** to create or modify — enumerated, no ambiguity.
-- **Decision lock** — a statement that the change executes (not re-opens) prior decisions.
-- **Configuration constraints** — per-file rules when config files are created (minimal, no advanced settings, no environment-specific values).
-- **Execution constraints** — prohibitions on side work, extra deps, refactors, or abstractions.
-- **Explicit out-of-scope items** — including deferred decisions that a reader might otherwise assume are in scope.
-- **Explicit prohibitions for the agent** — "do not" bullets for the most likely wrong turns.
+- **State exactly what it produces.** Name the artifact(s) or state change the task creates.
+- **Define how completion is verified.** Include a check that can be run or inspected to confirm the task is done.
+- **Include STOP conditions when applicable.** If a precondition fails or an assumption is violated, state explicitly what to do.
+- **Be executable without interpretation.** A contributor (human or agent) must be able to execute the task without resolving ambiguity on the fly.
 
-Changes that skip these sections must be sent back to the proposal stage.
+Tasks that do not meet these requirements must be revised before execution begins.
 
-## Additional requirements for tooling/foundation changes
+## Tooling/foundation requirements
 
-When the change type is `tooling/foundation`, also verify against the full checklist in `docs/conventions/tooling-changes.md` before approving the proposal. That checklist covers:
+For `tooling/foundation` changes, verify the proposal against the full checklist in `docs/conventions/tooling-changes.md` before proceeding to planning. That checklist covers versioning, compatibility assumptions, cross-cutting concern ownership, validation probes, and proposal completeness.
 
-- Exact version pinning (no `latest`, no ranges)
-- Compatibility assumptions section (runtime versions, cross-package constraints, changelog verification)
-- Cross-cutting concern ownership (single declared owner per shared artifact)
-- Validation probes required in tasks for unverified assumptions
-
-A `tooling/foundation` proposal that omits any item from that checklist must be sent back.
+A `tooling/foundation` proposal that fails any item in that checklist must be sent back to draft.
 
 ## Next
 
