@@ -12,7 +12,7 @@ Early development. The CLI is **not yet implemented**. The repository is current
 - **Adapt** existing repositories to SDD, non-destructively.
 - **Stay agent-agnostic**: the generated structure works with any capable coding agent.
 
-## Target stack
+## Implementation stack
 
 - Node.js + TypeScript
 - pnpm
