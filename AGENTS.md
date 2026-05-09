@@ -64,6 +64,24 @@ When starting any stage of work, if your interpretation of a spec, proposal, or 
 
 If the required interpretation cannot be derived from the existing documents, stop. Name what is unclear. Revise the appropriate document or ask.
 
+## 8. Before implementing code
+
+Before writing any implementation, read the convention documents relevant to your task:
+
+| Always read | Document |
+|---|---|
+| Layer model, DI rule | [`docs/conventions/architecture.md`](./docs/conventions/architecture.md) |
+| TypeScript coding rules | [`docs/conventions/typescript.md`](./docs/conventions/typescript.md) |
+
+| Read when applicable | When |
+|---|---|
+| [`docs/conventions/errors.md`](./docs/conventions/errors.md) | Adding a new command or error surface |
+| [`docs/conventions/filesystem-safety.md`](./docs/conventions/filesystem-safety.md) | Writing any code that creates or modifies files |
+| [`docs/conventions/testing.md`](./docs/conventions/testing.md) | Writing tests |
+| [`docs/conventions/quality-gates.md`](./docs/conventions/quality-gates.md) | Before marking a task complete |
+
+Do not mark a task complete without running the quality gate defined in `docs/conventions/quality-gates.md`.
+
 ## Agent-agnostic
 
 Claude Code is the primary agent used today, but nothing in this repository is Claude-specific. Any capable coding agent should be able to follow `AGENTS.md` and the workflows under `docs/workflows/` to contribute correctly.
