@@ -4,8 +4,7 @@
 - **Status:** `Draft`
 - **Type:** `<feature | tooling/foundation | sdd-system | fix>`
 - **Date:** `<YYYY-MM-DD>`
-
-<!-- Feature changes only: **Spec reference:** `sdd/specs/<topic>.md` -->
+- **Spec reference:** `sdd/specs/<topic>.md` <!-- feature changes only; remove this line for non-feature changes -->
 
 ## 1. Problem statement
 

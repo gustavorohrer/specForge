@@ -18,7 +18,7 @@ When in doubt, run the full gate. The exemption is narrow: it applies only when 
 Run in this order. Each step must exit 0 before proceeding to the next.
 
 ```
-pnpm run typecheck   # tsc --noEmit
+pnpm run typecheck   # tsc --noEmit (covers src/ and test/)
 pnpm run lint        # biome check .
 pnpm run test        # vitest run
 pnpm run build       # tsup

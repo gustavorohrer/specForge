@@ -18,7 +18,7 @@ Use this to execute one atomic task from a plan.
    - Do not adjust adjacent code, formatting, or documentation that the task did not require changing. If you notice an issue outside the task's scope, mention it — do not fix it.
 3. **Update docs** that describe changed behavior, **in the same commit**. See `docs/conventions/documentation.md`.
 4. **Verify** per [`docs/conventions/quality-gates.md`](../conventions/quality-gates.md).
-   - If any source, config, or test file changed: run `pnpm run typecheck`, then `pnpm run lint`, then `pnpm run test`, then `pnpm run build` — each must exit 0 before running the next.
+   - If any source, config, or test file changed: run the full quality gate defined in `docs/conventions/quality-gates.md`. Each step must exit 0 before proceeding to the next.
    - If writing filesystem operations: confirm compliance with `docs/conventions/filesystem-safety.md`.
    - If introducing a new error mode: confirm compliance with `docs/conventions/errors.md`.
    - For docs-only `sdd-system` changes: run `docs/workflows/validate-docs.md` only.
