@@ -58,6 +58,12 @@ Do not skip this step.
 | Execute a task | `docs/workflows/implement-task.md` |
 | Validate before merge | `docs/workflows/validate-docs.md` |
 
+## 7. Surface ambiguity before acting
+
+When starting any stage of work, if your interpretation of a spec, proposal, or task is not uniquely determined, state your reading explicitly before proceeding. Do not resolve ambiguity through an undisclosed interpretive choice.
+
+If the required interpretation cannot be derived from the existing documents, stop. Name what is unclear. Revise the appropriate document or ask.
+
 ## Agent-agnostic
 
 Claude Code is the primary agent used today, but nothing in this repository is Claude-specific. Any capable coding agent should be able to follow `AGENTS.md` and the workflows under `docs/workflows/` to contribute correctly.

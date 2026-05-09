@@ -8,6 +8,7 @@ Use this to execute one atomic task from a plan.
 2. **Implement the minimum** required to satisfy the task.
    - Do not exceed the task's scope.
    - If scope drift becomes necessary, stop and update the plan.
+   - Do not adjust adjacent code, formatting, or documentation that the task did not require changing. If you notice an issue outside the task's scope, mention it — do not fix it.
 3. **Update docs** that describe changed behavior, **in the same commit**. See `docs/conventions/documentation.md`.
 4. **Verify** per the plan's verification strategy — tests, manual run, lint, type-check, etc.
 5. **Commit** following `docs/conventions/git.md`. Reference `proposal.md` and `tasks.md` in the commit body.
